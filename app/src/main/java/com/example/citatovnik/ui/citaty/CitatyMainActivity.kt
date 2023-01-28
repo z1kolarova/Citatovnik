@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.citatovnik.data.Citat
 import com.example.citatovnik.databinding.ActivityMainCitatyBinding
+import com.example.citatovnik.utilities.InjectorUtils
 
 class CitatyMainActivity : AppCompatActivity() {
 
@@ -22,6 +23,7 @@ class CitatyMainActivity : AppCompatActivity() {
         binding = ActivityMainCitatyBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        inicializujUI()
 
         /*binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -40,8 +42,10 @@ class CitatyMainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)*/
     }
 
-    private fun initializeUI(){
-        val factory = ViewModelProvider.AndroidViewModelFactory(application)
+    private fun inicializujUI(){
+        val factory = InjectorUtils.dejCitatyViewModelFactory()
+
+        //val factory = ViewModelProvider.AndroidViewModelFactory(application)
         viewModel = ViewModelProvider(this, factory).get(CitatyViewModel::class.java)
 
         viewModel.vratCitaty().observe(this, Observer { citaty ->
@@ -53,11 +57,10 @@ class CitatyMainActivity : AppCompatActivity() {
         })
 
         binding.btnPridatCitat.setOnClickListener{
-            val citat = Citat( binding.editTextCitat.text.toString(),  binding.editTextAutor.text.toString())
+            val citat = Citat(binding.editTextCitat.text.toString(), binding.editTextAutor.text.toString())
             viewModel.pridejCitat(citat)
             binding.editTextCitat.setText("")
             binding.editTextAutor.setText("")
-
         }
     }
 }
