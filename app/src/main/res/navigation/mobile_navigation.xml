@@ -13,13 +13,9 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.citatovnik.ui.home.HomeFragment"
+        android:name="com.example.citatovnik.ui.ulozene_citaty.UlozeneCitatyFragment"
         android:label="Uložené citáty"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_ulozene_citaty" />
 
-    <fragment
-        android:id="@+id/nastaveniFragment"
-        android:name="com.example.citatovnik.ui.notifications.NotificationsFragment"
-        android:label="Nastavení"
-        tools:layout="@layout/fragment_nastaveni" />
+
 </navigation>

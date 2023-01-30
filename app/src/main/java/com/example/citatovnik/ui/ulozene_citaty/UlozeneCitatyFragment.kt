@@ -1,4 +1,4 @@
-package com.example.citatovnik.ui.notifications
+package com.example.citatovnik.ui.ulozene_citaty
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.citatovnik.databinding.FragmentNastaveniBinding
+import com.example.citatovnik.databinding.FragmentUlozeneCitatyBinding
 
-class NotificationsFragment : Fragment() {
+class UlozeneCitatyFragment : Fragment() {
 
-    private var _binding: FragmentNastaveniBinding? = null
+    private var _binding: FragmentUlozeneCitatyBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+        val ulozeneCitatyViewModel =
+            ViewModelProvider(this).get(UlozeneCitatyViewModel::class.java)
 
-        _binding = FragmentNastaveniBinding.inflate(inflater, container, false)
+        _binding = FragmentUlozeneCitatyBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textHome
+        ulozeneCitatyViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

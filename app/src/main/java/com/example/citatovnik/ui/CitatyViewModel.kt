@@ -1,4 +1,4 @@
-package com.example.citatovnik.ui.citaty
+package com.example.citatovnik.ui
 
 import androidx.lifecycle.ViewModel
 import com.example.citatovnik.data.Citat

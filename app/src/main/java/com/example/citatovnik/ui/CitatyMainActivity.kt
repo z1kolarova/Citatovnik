@@ -1,4 +1,4 @@
-package com.example.citatovnik.ui.citaty
+package com.example.citatovnik.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -13,8 +13,6 @@ import com.example.citatovnik.data.Citat
 import com.example.citatovnik.databinding.ActivityMainCitatyBinding
 import com.example.citatovnik.utilities.InjectorUtils
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.internal.NavigationMenu
-import com.google.android.material.navigation.NavigationView
 
 class CitatyMainActivity : AppCompatActivity() {
 
