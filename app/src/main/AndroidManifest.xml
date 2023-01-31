@@ -4,9 +4,9 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    
+
     <application
-        android:name=".CitatyApplication"
+        android:name=".predelane.CitatovnikApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,18 +17,25 @@
         android:theme="@style/Theme.Citatovnik"
         tools:targetApi="31">
         <activity
-            android:name=".ui.CitatyMainActivity"
-            android:exported="true"
-            android:label="Citátovník">
+            android:name="com.NacitaniActivity"
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
 
             <meta-data
                 android:name="android.app.lib_name"
-                android:value="Citátovník" />
+                android:value="" />
         </activity>
     </application>
 

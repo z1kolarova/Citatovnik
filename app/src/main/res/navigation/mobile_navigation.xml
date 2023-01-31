@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/citatDneFragment"
-        android:name="com.example.citatovnik.ui.citaty.citat_dne.CitatDneFragment"
+        android:name="com.example.citatovnik.predelane.citatdne.CitatDneFragment"
         android:label="Citát dne"
         tools:layout="@layout/fragment_citat_dne" >
     </fragment>
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.citatovnik.ui.ulozene_citaty.UlozeneCitatyFragment"
+        android:name="com.example.citatovnik.predelane.ulozenecitaty.UlozeneCitatyFragment"
         android:label="Uložené citáty"
         tools:layout="@layout/fragment_ulozene_citaty" />
 
