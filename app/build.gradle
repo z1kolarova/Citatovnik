@@ -82,8 +82,12 @@ dependencies {
     kapt 'androidx.lifecycle:lifecycle-compiler:2.5.1'
 
     // Kodein
-    //implementation 'org.kodein.di:kodein-di-generic-jvm:7.3.1'
-    //implementation 'org.kodein.di:kodein-di-framework-android-x:7.18.0'
+    implementation 'com.github.salomonbrys.kodein:kodein:4.1.0'
+    implementation 'org.kodein.di:kodein-di:7.18.0'
+    implementation 'org.kodein.di:kodein-di-framework-android-x:7.18.0'
+
+    //ZonedDateTime
+    implementation 'org.threeten:threetenbp:1.6.5'
 
     // Glide - zobrazovani obrazku?
     implementation 'com.github.bumptech.glide:glide:4.14.2'

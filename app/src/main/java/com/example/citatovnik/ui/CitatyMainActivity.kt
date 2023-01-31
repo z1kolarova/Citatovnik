@@ -39,7 +39,7 @@ class CitatyMainActivity : AppCompatActivity() {
         bottom_nav_menu.setupWithNavController(navController)
         NavigationUI.setupActionBarWithNavController(this, navController)
 
-        inicializujUI()
+        //inicializujUI()
 
         /*binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -64,6 +64,7 @@ class CitatyMainActivity : AppCompatActivity() {
     }
 
     private fun inicializujUI(){
+        /*
         val factory = InjectorUtils.dejCitatyViewModelFactory()
 
         //val factory = ViewModelProvider.AndroidViewModelFactory(application)
@@ -83,5 +84,6 @@ class CitatyMainActivity : AppCompatActivity() {
             binding.editTextCitat.setText("")
             binding.editTextAutor.setText("")
         }
+        */
     }
 }

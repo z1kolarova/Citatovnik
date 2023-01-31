@@ -2,11 +2,13 @@ package com.example.citatovnik.ui
 
 import androidx.lifecycle.ViewModel
 import com.example.citatovnik.data.Citat
-import com.example.citatovnik.data.CitatRepository
+import com.example.citatovnik.data.repositories.CitatRepositoryImpl
 
-class CitatyViewModel(private val citatRepository: CitatRepository) :ViewModel() {
+class CitatyViewModel(private val citatRepositoryImpl: CitatRepositoryImpl) :ViewModel() {
+/*
+    fun vratCitaty() = citatRepositoryImpl.vratCitaty()
 
-    fun vratCitaty() = citatRepository.vratCitaty()
+    fun pridejCitat(citat: Citat) = citatRepositoryImpl.pridejCitat(citat)
 
-    fun pridejCitat(citat: Citat) = citatRepository.pridejCitat(citat)
+ */
 }
