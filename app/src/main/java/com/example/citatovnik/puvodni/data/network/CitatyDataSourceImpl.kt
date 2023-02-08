@@ -18,7 +18,7 @@ class CitatyDataSourceImpl(
     override suspend fun dotahniCitatDne() {
         try {
             val dotazenyCitatDne = zenQuotesAPIService
-                .vratCitat()
+                .vratCitatDne()
                 .await()
             _dotazenyCitatDne.postValue(dotazenyCitatDne.first())
         }

@@ -7,7 +7,7 @@
         android:title="Citát dne" />
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/ulozeneCitatyFragment"
         android:icon="@drawable/ic_baseline_emoji_objects_24"
         android:title="Uložené citáty" />
 

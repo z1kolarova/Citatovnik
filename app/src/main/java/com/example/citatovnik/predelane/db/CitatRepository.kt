@@ -13,6 +13,12 @@ class CitatRepository(private val citatyDao: CitatyDao) {
         citatyDao.upsert(citat)
     }
 
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun insert(citat: CitatDneDBItem){
+        citatyDao.upsert(citat)
+    }
+
     suspend fun delete(citat: CitatDBItem){
         citatyDao.vymaz(citat)
     }

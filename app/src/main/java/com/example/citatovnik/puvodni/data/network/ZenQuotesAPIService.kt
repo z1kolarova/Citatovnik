@@ -15,7 +15,7 @@ const val API_MODE = "today"
 
 interface ZenQuotesAPIService {
     @GET("https://zenquotes.io?")
-    fun vratCitat(
+    fun vratCitatDne(
         @Query("api") mode: String = API_MODE
     ): Deferred<CitatDneResponse>
 

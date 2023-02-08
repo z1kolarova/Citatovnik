@@ -7,10 +7,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.citatovnik.R
 import com.example.citatovnik.predelane.citatdne.CitatDneViewModel
+import com.example.citatovnik.predelane.ulozenecitaty.UlozeneCitatyViewModel
 
 class CitatAdapter( val citaty: List<CitatDBItem>) : RecyclerView.Adapter<CitatAdapter.MyViewHolder>(){
 
-    lateinit var viewModel: CitatDneViewModel
+    lateinit var viewModel: UlozeneCitatyViewModel
 
     class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val tv_text_citatu: TextView = view.findViewById(R.id.citat_text)

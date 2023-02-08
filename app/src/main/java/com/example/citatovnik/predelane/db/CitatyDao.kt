@@ -7,10 +7,13 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface CitatyDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun upsert(citaty: CitatDBItem)
+    suspend fun upsert(citaty: CitatDBItem)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsert(citaty: CitatDneDBItem)
 
     @Query("select * from citaty where id = $CITAT_DNE_ID")
-    fun vratCitatDne(): Flow<CitatDBItem>
+    fun vratCitatDne(): CitatDneDBItem
 
     @Query("select * from citaty where id > $CITAT_DNE_ID")
     fun vratUlozeneCitaty(): Flow<List<CitatDBItem>>

@@ -1,17 +1,20 @@
 package com.example.citatovnik.predelane.citatdne
 
+import android.content.Context
+import android.graphics.Color
 import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.citatovnik.databinding.FragmentCitatDneBinding
 import com.example.citatovnik.predelane.CitatovnikApplication
+import com.example.citatovnik.puvodni.data.network.ZenQuotesAPIService
+import com.google.android.material.snackbar.Snackbar
 
 class CitatDneFragment : Fragment() {
 
@@ -25,32 +28,54 @@ class CitatDneFragment : Fragment() {
 
         viewModel = ViewModelProvider(this, viewModelFactory).get(CitatDneViewModel::class.java)
         binding = FragmentCitatDneBinding.inflate(layoutInflater)
+
+        binding.btnUlozitCitatDne.setOnClickListener{
+            //viewModel.dotahniCitatDne(requireContext(), it)
+        }
 /*
-        val recycler: RecyclerView = binding.historyRecyclerView
-        viewModel.wholeHistory.observe(viewLifecycleOwner, Observer { listOfLocDb ->
-            recycler.also {
-                it.layoutManager = LinearLayoutManager(requireContext())
-                it.adapter = LocationAdapter(listOfLocDb)
-                (it.adapter as LocationAdapter).viewModel = viewModel
+        binding.btnGetMyIP.setOnClickListener {
+            viewModel.dotahniCitatDne(requireContext(), it)
+        }
+        binding.btnLocateIP.setOnClickListener {
+            viewModel.onLocateClicked(requireContext(), it)
+        }
+
+        viewModel.error.observe(viewLifecycleOwner, Observer { msg ->
+            if (msg != "") {
+                this.view?.let {
+                    showMessage(msg, it)
+                    viewModel.errorReaded()
+                }
             }
         })
 
-        viewModel.location.observe(viewLifecycleOwner, Observer { loc ->
-            loc?.let {
-                showLocation(loc)
-                viewModel.ResetLocation()
+        binding.btnHistory.setOnClickListener {
+            val action = SetipFragmentDirections.actionSetipFragmentToHistoryFragment()
+            NavHostFragment.findNavController(this).navigate(action)
+        }
+
+        viewModel.localized.observe(viewLifecycleOwner, Observer { localized ->
+            if( localized ) {
+                showLocation(viewModel.location.value as Location)
+                viewModel.resetLocation()
             }
         })
 
-        binding.historyViewModel = viewModel
+        binding.citatDneViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
+*/
         return binding.root
     }
-
+/*
     private fun showLocation(location: Location) {
-        val action = HistoryFragmentDirections.actionHistoryFragmentToResultFragment(location)
-        NavHostFragment.findNavController(this).navigate(action) */
-        return binding.root
+        val action = SetipFragmentDirections.actionSetipFragmentToResultFragment(location)
+        NavHostFragment.findNavController(this).navigate(action)
+    }
+*/
+    private fun showMessage(msg: String, view: View ){
+        val message = Snackbar.make( view, msg, Snackbar.LENGTH_LONG)
+        message.setTextColor(Color.RED)
+        message.show()
     }
 
 }
