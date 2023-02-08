@@ -12,6 +12,7 @@ import com.android.volley.toolbox.Volley
 import com.example.citatovnik.predelane.db.CitatDneDBItem
 import com.example.citatovnik.predelane.db.CitatRepository
 import com.example.citatovnik.puvodni.data.db.entity.CitatDneResponseItem
+import kotlinx.coroutines.launch
 import org.json.JSONObject
 
 class CitatDneViewModel( private val repository: CitatRepository) : ViewModel() {
@@ -23,8 +24,7 @@ class CitatDneViewModel( private val repository: CitatRepository) : ViewModel() 
     private val _dotazenyCitatDne = MutableLiveData<CitatDneResponseItem>()
 
     init {
-        _citat.value = repository.citatDne
-
+        viewModelScope.launch { _citat.value = repository.vratCitatDne() }
     }
 /*
     private val _ipAddressAsString = MutableLiveData<String>()

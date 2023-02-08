@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 
 const val CITAT_DNE_ID = 0
 
-@Entity("citatDne")
+@Entity(tableName = "citatDne")
 class CitatDneDBItem (
     @SerializedName("q")
     val zneniCitatu: String,

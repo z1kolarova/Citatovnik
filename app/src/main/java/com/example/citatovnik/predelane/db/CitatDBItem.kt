@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity("citaty")
+@Entity(tableName = "citaty")
 class CitatDBItem (
     @PrimaryKey(autoGenerate = true)
     var id: Int,

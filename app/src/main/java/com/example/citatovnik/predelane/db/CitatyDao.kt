@@ -13,7 +13,7 @@ interface CitatyDao {
     suspend fun upsert(citaty: CitatDneDBItem)
 
     @Query("select * from citaty where id = $CITAT_DNE_ID")
-    fun vratCitatDne(): CitatDneDBItem
+    suspend fun vratCitatDne(): CitatDneDBItem
 
     @Query("select * from citaty where id > $CITAT_DNE_ID")
     fun vratUlozeneCitaty(): Flow<List<CitatDBItem>>
